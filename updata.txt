@@ -1,0 +1,290 @@
+{
+  "Lahore": {
+    "coordinates": {"latitude": 31.5497, "longitude": 74.3436},
+    "adjacent_districts": {
+      "Sheikhupura": {"distance": 20, "travel_time": 30, "cost": 10},
+      "Kasur": {"distance": 50, "travel_time": 45, "cost": 20},
+      "Nankana Sahib": {"distance": 25, "travel_time": 35, "cost": 15},
+      "Okara": {"distance": 40, "travel_time": 40, "cost": 18},
+      "Faisalabad": {"distance": 120, "travel_time": 90, "cost": 40}
+    }
+  },
+  "Rawalpindi": {
+    "coordinates": {"latitude": 33.6844, "longitude": 73.0479},
+    "adjacent_districts": {
+      "Attock": {"distance": 50, "travel_time": 60, "cost": 25},
+      "Jhelum": {"distance": 45, "travel_time": 55, "cost": 22},
+      "Chakwal": {"distance": 70, "travel_time": 75, "cost": 30}
+    }
+  },
+  "Faisalabad": {
+    "coordinates": {"latitude": 31.5497, "longitude": 73.0846},
+    "adjacent_districts": {
+      "Jhang": {"distance": 30, "travel_time": 40, "cost": 15},
+      "Toba Tek Singh": {"distance": 35, "travel_time": 45, "cost": 18},
+      "Chiniot": {"distance": 25, "travel_time": 35, "cost": 12},
+      "Sargodha": {"distance": 70, "travel_time": 60, "cost": 28},
+      "Sheikhupura": {"distance": 120, "travel_time": 90, "cost": 40},
+      "Lahore": {"distance": 120, "travel_time": 90, "cost": 40}
+    }
+  },
+  "Multan": {
+    "coordinates": {"latitude": 30.1798, "longitude": 71.4246},
+    "adjacent_districts": {
+      "Khanewal": {"distance": 50, "travel_time": 55, "cost": 25},
+      "Vehari": {"distance": 40, "travel_time": 50, "cost": 20},
+      "Lodhran": {"distance": 30, "travel_time": 40, "cost": 15},
+      "Muzaffargarh": {"distance": 80, "travel_time": 70, "cost": 35},
+      "Layyah": {"distance": 60, "travel_time": 65, "cost": 28}
+    }
+  },
+"Vehari": {
+  "coordinates": {"latitude": 30.0455, "longitude": 72.3488},
+  "adjacent_districts": {
+    "Multan": {"distance": 50, "travel_time": 1.5, "cost": 20},
+    "Khanewal": {"distance": 80, "travel_time": 2.0, "cost": 30},
+    "Lodhran": {"distance": 30, "travel_time": 1.0, "cost": 15},
+    "Bahawalpur": {"distance": 120, "travel_time": 3.0, "cost": 40},
+    "Layyah": {"distance": 90, "travel_time": 2.5, "cost": 35},
+    "Sahiwal": {"distance": 60, "travel_time": 1.8, "cost": 25}
+  }
+},
+"Jhelum": {
+  "coordinates": {"latitude": 32.9336, "longitude": 73.7274},
+  "adjacent_districts": {
+    "Rawalpindi": {"distance": 40, "travel_time": 1.2, "cost": 15},
+    "Chakwal": {"distance": 70, "travel_time": 2.2, "cost": 25},
+    "Gujrat": {"distance": 55, "travel_time": 1.7, "cost": 20},
+    "Khushab": {"distance": 65, "travel_time": 2.0, "cost": 22}
+  }
+},
+  "Gujranwala": {
+    "coordinates": {"latitude": 32.1617, "longitude": 74.1883},
+    "adjacent_districts": {
+      "Sialkot": {"distance": 40, "travel_time": 50, "cost": 20},
+      "Gujrat": {"distance": 30, "travel_time": 35, "cost": 15},
+      "Hafizabad": {"distance": 25, "travel_time": 30, "cost": 12},
+      "Sheikhupura": {"distance": 60, "travel_time": 70, "cost": 28},
+      "Lahore": {"distance": 90, "travel_time": 80, "cost": 35}
+    }
+  },
+  "Sialkot": {
+    "coordinates": {"latitude": 32.4945, "longitude": 74.5361},
+    "adjacent_districts": {
+      "Gujrat": {"distance": 30, "travel_time": 35, "cost": 15},
+      "Gujranwala": {"distance": 40, "travel_time": 50, "cost": 20}
+    }
+  },
+  "Bahawalpur": {
+    "coordinates": {"latitude": 29.3700, "longitude": 71.5354},
+    "adjacent_districts": {
+      "Rahim Yar Khan": {"distance": 60, "travel_time": 70, "cost": 28},
+      "Lodhran": {"distance": 40, "travel_time": 50, "cost": 20},
+      "Vehari": {"distance": 35, "travel_time": 40, "cost": 18},
+      "Layyah": {"distance": 80, "travel_time": 75, "cost": 30},
+      "Multan": {"distance": 120, "travel_time": 90, "cost": 40}
+    }
+  },
+  "Sargodha": {
+    "coordinates": {"latitude": 32.0836, "longitude": 72.6711},
+    "adjacent_districts": {
+      "Khushab": {"distance": 40, "travel_time": 45, "cost": 18},
+      "Mianwali": {"distance": 60, "travel_time": 70, "cost": 28},
+      "Jhang": {"distance": 25, "travel_time": 35, "cost": 15},
+      "Faisalabad": {"distance": 70, "travel_time": 60, "cost": 28},
+      "Sheikhupura": {"distance": 80, "travel_time": 75, "cost": 30},
+      "Okara": {"distance": 90, "travel_time": 80, "cost": 35}
+    }
+  },
+  "Sahiwal": {
+    "coordinates": {"latitude": 30.6652, "longitude": 73.1062},
+    "adjacent_districts": {
+      "Okara": {"distance": 40, "travel_time": 50, "cost": 20},
+      "Vehari": {"distance": 45, "travel_time": 55, "cost": 22},
+      "Kasur": {"distance": 35, "travel_time": 40, "cost": 18},
+      "Faisalabad": {"distance": 60, "travel_time": 70, "cost": 28}
+    }
+  },
+  "Sheikhupura": {
+    "coordinates": {"latitude": 31.7131, "longitude": 73.9783},
+    "adjacent_districts": {
+      "Lahore": {"distance": 20, "travel_time": 30, "cost": 10},
+      "Nankana Sahib": {"distance": 30, "travel_time": 40, "cost": 15},
+      "Faisalabad": {"distance": 120, "travel_time": 90, "cost": 40},
+      "Sargodha": {"distance": 80, "travel_time": 75, "cost": 30},
+      "Okara": {"distance": 60, "travel_time": 70, "cost": 28}
+    }
+  },
+  "Jhang": {
+    "coordinates": {"latitude": 31.2742, "longitude": 72.3183},
+    "adjacent_districts": {
+      "Faisalabad": {"distance": 30, "travel_time": 40, "cost": 15},
+      "Toba Tek Singh": {"distance": 25, "travel_time": 35, "cost": 12},
+      "Chiniot": {"distance": 35, "travel_time": 45, "cost": 18},
+      "Sargodha": {"distance": 25, "travel_time": 35, "cost": 15},
+      "Layyah": {"distance": 70, "travel_time": 60, "cost": 28},
+      "Multan": {"distance": 90, "travel_time": 80, "cost": 35}
+    }
+  },
+  "Gujrat": {
+    "coordinates": {"latitude": 32.5741, "longitude": 74.0776},
+    "adjacent_districts": {
+      "Sialkot": {"distance": 40, "travel_time": 50, "cost": 20},
+      "Sargodha": {"distance": 60, "travel_time": 70, "cost": 28},
+      "Hafizabad": {"distance": 30, "travel_time": 35, "cost": 15}
+    }
+  },
+  "Kasur": {
+    "coordinates": {"latitude": 31.1150, "longitude": 74.4460},
+    "adjacent_districts": {
+      "Lahore": {"distance": 50, "travel_time": 45, "cost": 20},
+      "Nankana Sahib": {"distance": 30, "travel_time": 40, "cost": 15},
+      "Sheikhupura": {"distance": 35, "travel_time": 40, "cost": 18},
+      "Faisalabad": {"distance": 45, "travel_time": 50, "cost": 22},
+      "Okara": {"distance": 35, "travel_time": 40, "cost": 18}
+    }
+  },
+  "Okara": {
+    "coordinates": {"latitude": 30.8102, "longitude": 73.4590},
+    "adjacent_districts": {
+      "Lahore": {"distance": 40, "travel_time": 40, "cost": 18},
+      "Sheikhupura": {"distance": 60, "travel_time": 70, "cost": 28},
+      "Kasur": {"distance": 35, "travel_time": 40, "cost": 18},
+      "Faisalabad": {"distance": 90, "travel_time": 80, "cost": 35},
+      "Sahiwal": {"distance": 60, "travel_time": 70, "cost": 28}
+    }
+  },
+  "Attock": {
+    "coordinates": {"latitude": 33.7663, "longitude": 72.2516},
+    "adjacent_districts": {
+      "Rawalpindi": {"distance": 50, "travel_time": 60, "cost": 25},
+      "Mianwali": {"distance": 70, "travel_time": 75, "cost": 30},
+      "Chakwal": {"distance": 30, "travel_time": 40, "cost": 15}
+    }
+  },
+  "Rahim Yar Khan": {
+    "coordinates": {"latitude": 28.4220, "longitude": 70.2957},
+    "adjacent_districts": {
+      "Bahawalpur": {"distance": 60, "travel_time": 70, "cost": 28},
+      "Layyah": {"distance": 50, "travel_time": 55, "cost": 25},
+      "Rajanpur": {"distance": 40, "travel_time": 50, "cost": 20}
+    }
+  },
+  "Nankana Sahib": {
+    "coordinates": {"latitude": 31.4475, "longitude": 73.6961},
+    "adjacent_districts": {
+      "Lahore": {"distance": 25, "travel_time": 35, "cost": 15},
+      "Sheikhupura": {"distance": 30, "travel_time": 40, "cost": 18},
+      "Kasur": {"distance": 40, "travel_time": 45, "cost": 20}
+    }
+  },
+  "Hafizabad": {
+    "coordinates": {"latitude": 32.0679, "longitude": 73.6845},
+    "adjacent_districts": {
+      "Gujranwala": {"distance": 25, "travel_time": 30, "cost": 12},
+      "Gujrat": {"distance": 30, "travel_time": 35, "cost": 15},
+      "Sialkot": {"distance": 40, "travel_time": 50, "cost": 20}
+    }
+  },
+  "Lodhran": {
+    "coordinates": {"latitude": 29.5382, "longitude": 71.6262},
+    "adjacent_districts": {
+      "Multan": {"distance": 30, "travel_time": 40, "cost": 15},
+      "Vehari": {"distance": 35, "travel_time": 45, "cost": 18},
+      "Khanewal": {"distance": 25, "travel_time": 35, "cost": 12},
+      "Bahawalpur": {"distance": 50, "travel_time": 55, "cost": 25}
+    }
+  },
+  "Chakwal": {
+    "coordinates": {"latitude": 32.9336, "longitude": 72.8605},
+    "adjacent_districts": {
+      "Rawalpindi": {"distance": 70, "travel_time": 75, "cost": 30},
+      "Jhelum": {"distance": 45, "travel_time": 55, "cost": 22},
+      "Attock": {"distance": 30, "travel_time": 40, "cost": 15},
+      "Mianwali": {"distance": 60, "travel_time": 70, "cost": 28},
+      "Khushab": {"distance": 70, "travel_time": 80, "cost": 35}
+    }
+  },
+  "Khushab": {
+    "coordinates": {"latitude": 32.2959, "longitude": 72.4075},
+    "adjacent_districts": {
+      "Sargodha": {"distance": 50, "travel_time": 60, "cost": 25},
+      "Mianwali": {"distance": 70, "travel_time": 80, "cost": 30},
+      "Chakwal": {"distance": 90, "travel_time": 100, "cost": 35},
+      "Jhelum": {"distance": 120, "travel_time": 130, "cost": 45}
+    }
+  },
+  "Bhakkar": {
+    "coordinates": {"latitude": 31.6304, "longitude": 71.0654},
+    "adjacent_districts": {
+      "Layyah": {"distance": 40, "travel_time": 50, "cost": 20},
+      "Muzaffargarh": {"distance": 60, "travel_time": 70, "cost": 25},
+      "Jhang": {"distance": 80, "travel_time": 90, "cost": 35},
+      "Khushab": {"distance": 100, "travel_time": 110, "cost": 40}
+    }
+  },
+  "Toba Tek Singh": {
+    "coordinates": {"latitude": 30.9744, "longitude": 72.4086},
+    "adjacent_districts": {
+      "Faisalabad": {"distance": 30, "travel_time": 40, "cost": 15},
+      "Jhang": {"distance": 50, "travel_time": 60, "cost": 25},
+      "Chiniot": {"distance": 70, "travel_time": 80, "cost": 30}
+    }
+  },
+  "Layyah": {
+    "coordinates": {"latitude": 30.9566, "longitude": 70.9464},
+    "adjacent_districts": {
+      "Multan": {"distance": 60, "travel_time": 70, "cost": 25},
+      "Rajanpur": {"distance": 80, "travel_time": 90, "cost": 30},
+      "Muzaffargarh": {"distance": 100, "travel_time": 110, "cost": 40},
+      "Vehari": {"distance": 120, "travel_time": 130, "cost": 45}
+    }
+  },
+"Khanewal": {
+  "coordinates": {"latitude": 30.3032, "longitude": 71.9328},
+  "adjacent_districts": {
+    "Multan": {"distance": 50, "travel_time": 1.5, "cost": 20},
+    "Vehari": {"distance": 30, "travel_time": 1.0, "cost": 15},
+    "Lodhran": {"distance": 40, "travel_time": 1.2, "cost": 18},
+    "Muzaffargarh": {"distance": 80, "travel_time": 2.5, "cost": 30}
+  }
+},
+"Mianwali": {
+  "coordinates": {"latitude": 32.5747, "longitude": 71.5375},
+  "adjacent_districts": {
+    "Rawalpindi": {"distance": 120, "travel_time": 3.5, "cost": 40},
+    "Attock": {"distance": 80, "travel_time": 2.5, "cost": 30},
+    "Chakwal": {"distance": 60, "travel_time": 2.0, "cost": 25},
+    "Khushab": {"distance": 70, "travel_time": 2.2, "cost": 28},
+    "Sargodha": {"distance": 100, "travel_time": 3.0, "cost": 35}
+  }
+},
+"Rajanpur": {
+  "coordinates": {"latitude": 29.1038, "longitude": 70.3293},
+  "adjacent_districts": {
+    "Layyah": {"distance": 50, "travel_time": 1.5, "cost": 22},
+    "Muzaffargarh": {"distance": 40, "travel_time": 1.2, "cost": 18},
+    "Bahawalpur": {"distance": 90, "travel_time": 2.8, "cost": 32}
+  }
+},
+"Chiniot": {
+  "coordinates": {"latitude": 31.7208, "longitude": 72.9781},
+  "adjacent_districts": {
+    "Faisalabad": {"distance": 40, "travel_time": 1.2, "cost": 18},
+    "Toba Tek Singh": {"distance": 40, "travel_time": 1.2, "cost": 18},
+    "Jhang": {"distance": 30, "travel_time": 1.0, "cost": 15},
+    "Sargodha": {"distance": 60, "travel_time": 2.0, "cost": 25}
+  }
+},
+  "Muzaffargarh": {
+    "coordinates": {"latitude": 30.0702, "longitude": 71.1932},
+    "adjacent_districts": {
+      "Layyah": {"distance": 120, "travel_time": 130, "cost": 45},
+      "Rajanpur": {"distance": 100, "travel_time": 110, "cost": 40},
+      "Multan": {"distance": 80, "travel_time": 90, "cost": 30},
+      "Khanewal": {"distance": 60, "travel_time": 70, "cost": 25},
+      "Vehari": {"distance": 40, "travel_time": 50, "cost": 20}
+    }
+  }
+}
+
