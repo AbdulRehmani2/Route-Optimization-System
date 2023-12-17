@@ -1,0 +1,337 @@
+{
+  "Faisalabad": {
+    "coordinates": {
+      "latitude": 31.5497,
+      "longitude": 73.0846
+    },
+    "adjacent_districts": [
+      "Jhang",
+      "Toba Tek Singh",
+      "Chiniot",
+      "Sargodha",
+      "Sheikhupura"
+    ]
+  },
+  "Gujranwala": {
+    "coordinates": {
+      "latitude": 32.1617,
+      "longitude": 74.1883
+    },
+    "adjacent_districts": [
+      "Sialkot",
+      "Gujrat",
+      "Hafizabad",
+      "Sheikhupura"
+    ]
+  },
+  "Sialkot": {
+    "coordinates": {
+      "latitude": 32.4945,
+      "longitude": 74.5361
+    },
+    "adjacent_districts": [
+      "Gujrat",
+      "Gujranwala"
+    ]
+  },
+  "Bahawalpur": {
+    "coordinates": {
+      "latitude": 29.37,
+      "longitude": 71.5354
+    },
+    "adjacent_districts": [
+      "Rahim Yar Khan",
+      "Lodhran",
+      "Vehari"
+    ]
+  },
+  "Sargodha": {
+    "coordinates": {
+      "latitude": 32.0836,
+      "longitude": 72.6711
+    },
+    "adjacent_districts": [
+      "Khushab",
+      "Mianwali",
+      "Jhang",
+      "Faisalabad",
+      "Sheikhupura",
+      "Okara"
+    ]
+  },
+  "Sahiwal": {
+    "coordinates": {
+      "latitude": 30.6652,
+      "longitude": 73.1062
+    },
+    "adjacent_districts": [
+      "Okara",
+      "Vehari",
+      "Kasur",
+      "Faisalabad"
+    ]
+  },
+  "Sheikhupura": {
+    "coordinates": {
+      "latitude": 31.7131,
+      "longitude": 73.9783
+    },
+    "adjacent_districts": [
+      "Nankana Sahib",
+      "Faisalabad",
+      "Sargodha",
+      "Okara"
+    ]
+  },
+  "Jhang": {
+    "coordinates": {
+      "latitude": 31.2742,
+      "longitude": 72.3183
+    },
+    "adjacent_districts": [
+      "Faisalabad",
+      "Toba Tek Singh",
+      "Chiniot",
+      "Sargodha"
+    ]
+  },
+  "Gujrat": {
+    "coordinates": {
+      "latitude": 32.5741,
+      "longitude": 74.0776
+    },
+    "adjacent_districts": [
+      "Sialkot",
+      "Sargodha",
+      "Hafizabad"
+    ]
+  },
+  "Kasur": {
+    "coordinates": {
+      "latitude": 31.115,
+      "longitude": 74.446
+    },
+    "adjacent_districts": [
+      "Nankana Sahib",
+      "Sheikhupura",
+      "Faisalabad",
+      "Okara"
+    ]
+  },
+  "Okara": {
+    "coordinates": {
+      "latitude": 30.8102,
+      "longitude": 73.459
+    },
+    "adjacent_districts": [
+      "Sheikhupura",
+      "Kasur",
+      "Faisalabad",
+      "Sahiwal"
+    ]
+  },
+  "Attock": {
+    "coordinates": {
+      "latitude": 33.7663,
+      "longitude": 72.2516
+    },
+    "adjacent_districts": [
+      "Mianwali",
+      "Chakwal"
+    ]
+  },
+  "Rahim Yar Khan": {
+    "coordinates": {
+      "latitude": 28.422,
+      "longitude": 70.2957
+    },
+    "adjacent_districts": [
+      "Bahawalpur",
+      "Rajanpur"
+    ]
+  },
+  "Vehari": {
+    "coordinates": {
+      "latitude": 30.0455,
+      "longitude": 72.3488
+    },
+    "adjacent_districts": [
+      "Khanewal",
+      "Lodhran",
+      "Bahawalpur",
+      "Sahiwal"
+    ]
+  },
+  "Jhelum": {
+    "coordinates": {
+      "latitude": 32.9336,
+      "longitude": 73.7274
+    },
+    "adjacent_districts": [
+      "Chakwal",
+      "Gujrat",
+      "Khushab"
+    ]
+  },
+  "Chiniot": {
+    "coordinates": {
+      "latitude": 31.7208,
+      "longitude": 72.9781
+    },
+    "adjacent_districts": [
+      "Faisalabad",
+      "Toba Tek Singh",
+      "Jhang",
+      "Sargodha"
+    ]
+  },
+  "Khanewal": {
+    "coordinates": {
+      "latitude": 30.3032,
+      "longitude": 71.9328
+    },
+    "adjacent_districts": [
+      "Vehari",
+      "Lodhran",
+      "Muzaffargarh"
+    ]
+  },
+  "Toba Tek Singh": {
+    "coordinates": {
+      "latitude": 30.9744,
+      "longitude": 72.4086
+    },
+    "adjacent_districts": [
+      "Faisalabad",
+      "Jhang",
+      "Chiniot"
+    ]
+  },
+  "Mianwali": {
+    "coordinates": {
+      "latitude": 32.5747,
+      "longitude": 71.5375
+    },
+    "adjacent_districts": [
+      "Attock",
+      "Chakwal",
+      "Khushab",
+      "Sargodha"
+    ]
+  },
+  "Rajanpur": {
+    "coordinates": {
+      "latitude": 29.1038,
+      "longitude": 70.3293
+    },
+    "adjacent_districts": [
+      "Muzaffargarh",
+      "Bahawalpur"
+    ]
+  },
+  "Nankana Sahib": {
+    "coordinates": {
+      "latitude": 31.4475,
+      "longitude": 73.6961
+    },
+    "adjacent_districts": [
+      "Sheikhupura",
+      "Kasur"
+    ]
+  },
+  "Hafizabad": {
+    "coordinates": {
+      "latitude": 32.0679,
+      "longitude": 73.6845
+    },
+    "adjacent_districts": [
+      "Gujranwala",
+      "Gujrat",
+      "Sialkot"
+    ]
+  },
+  "Lodhran": {
+    "coordinates": {
+      "latitude": 29.5382,
+      "longitude": 71.6262
+    },
+    "adjacent_districts": [
+      "Vehari",
+      "Khanewal",
+      "Bahawalpur"
+    ]
+  },
+  "Chakwal": {
+    "coordinates": {
+      "latitude": 32.9336,
+      "longitude": 72.8605
+    },
+    "adjacent_districts": [
+      "Jhelum",
+      "Attock",
+      "Mianwali",
+      "Khushab"
+    ]
+  },
+  "Khushab": {
+    "coordinates": {
+      "latitude": 32.2959,
+      "longitude": 72.4075
+    },
+    "adjacent_districts": [
+      "Sargodha",
+      "Mianwali",
+      "Chakwal",
+      "Jhelum"
+    ]
+  },
+  "Bhakkar": {
+    "coordinates": {
+      "latitude": 31.6304,
+      "longitude": 71.0654
+    },
+    "adjacent_districts": [
+      "Muzaffargarh",
+      "Jhang",
+      "Khushab"
+    ]
+  },
+  "Muzaffargarh": {
+    "coordinates": {
+      "latitude": 30.0702,
+      "longitude": 71.1932
+    },
+    "adjacent_districts": [
+      "Rajanpur",
+      "Khanewal",
+      "Vehari"
+    ]
+  },
+  "Lahore": {
+    "coordinates": {
+      "latitude": 123.21,
+      "longitude": 12.31
+    },
+    "adjacent_districts": [
+      "Muzaffargarh"
+    ]
+  },
+  "Lodike": {
+    "coordinates": {
+      "latitude": 12.3,
+      "longitude": 12.11
+    },
+    "adjacent_districts": [
+      "Jhelum"
+    ]
+  },
+  "Rawanpindi": {
+    "coordinates": {
+      "latitude": 12.2,
+      "longitude": 11.23
+    },
+    "adjacent_districts": [
+      "Jhelum"
+    ]
+  }
+}

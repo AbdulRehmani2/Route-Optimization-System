@@ -1,0 +1,12 @@
+{
+  "life": {
+    "coordinates": {
+      "latitude": 12.34,
+      "longitude": 13.23
+    },
+    "adjacent_districts": [
+      "lahore",
+      "layyah"
+    ]
+  }
+}
