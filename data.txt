@@ -1,337 +1,142 @@
 {
+  "Lahore": {
+    "coordinates": {"latitude": 31.5497, "longitude": 74.3436},
+    "adjacent_districts": ["Sheikhupura", "Kasur", "Nankana Sahib", "Okara", "Faisalabad"]
+  },
+  "Rawalpindi": {
+    "coordinates": {"latitude": 33.6844, "longitude": 73.0479},
+    "adjacent_districts": ["Attock", "Jhelum", "Chakwal"]
+  },
   "Faisalabad": {
-    "coordinates": {
-      "latitude": 31.5497,
-      "longitude": 73.0846
-    },
-    "adjacent_districts": [
-      "Jhang",
-      "Toba Tek Singh",
-      "Chiniot",
-      "Sargodha",
-      "Sheikhupura"
-    ]
+    "coordinates": {"latitude": 31.5497, "longitude": 73.0846},
+    "adjacent_districts": ["Jhang", "Toba Tek Singh", "Chiniot", "Sargodha", "Sheikhupura", "Lahore"]
+  },
+  "Multan": {
+    "coordinates": {"latitude": 30.1798, "longitude": 71.4246},
+    "adjacent_districts": ["Khanewal", "Vehari", "Lodhran", "Muzaffargarh", "Layyah"]
   },
   "Gujranwala": {
-    "coordinates": {
-      "latitude": 32.1617,
-      "longitude": 74.1883
-    },
-    "adjacent_districts": [
-      "Sialkot",
-      "Gujrat",
-      "Hafizabad",
-      "Sheikhupura"
-    ]
+    "coordinates": {"latitude": 32.1617, "longitude": 74.1883},
+    "adjacent_districts": ["Sialkot", "Gujrat", "Hafizabad", "Sheikhupura", "Lahore"]
   },
   "Sialkot": {
-    "coordinates": {
-      "latitude": 32.4945,
-      "longitude": 74.5361
-    },
-    "adjacent_districts": [
-      "Gujrat",
-      "Gujranwala"
-    ]
+    "coordinates": {"latitude": 32.4945, "longitude": 74.5361},
+    "adjacent_districts": ["Gujrat", "Gujranwala"]
   },
   "Bahawalpur": {
-    "coordinates": {
-      "latitude": 29.37,
-      "longitude": 71.5354
-    },
-    "adjacent_districts": [
-      "Rahim Yar Khan",
-      "Lodhran",
-      "Vehari"
-    ]
+    "coordinates": {"latitude": 29.3700, "longitude": 71.5354},
+    "adjacent_districts": ["Rahim Yar Khan", "Lodhran", "Vehari", "Layyah", "Multan"]
   },
   "Sargodha": {
-    "coordinates": {
-      "latitude": 32.0836,
-      "longitude": 72.6711
-    },
-    "adjacent_districts": [
-      "Khushab",
-      "Mianwali",
-      "Jhang",
-      "Faisalabad",
-      "Sheikhupura",
-      "Okara"
-    ]
+    "coordinates": {"latitude": 32.0836, "longitude": 72.6711},
+    "adjacent_districts": ["Khushab", "Mianwali", "Jhang", "Faisalabad", "Sheikhupura", "Okara"]
   },
   "Sahiwal": {
-    "coordinates": {
-      "latitude": 30.6652,
-      "longitude": 73.1062
-    },
-    "adjacent_districts": [
-      "Okara",
-      "Vehari",
-      "Kasur",
-      "Faisalabad"
-    ]
+    "coordinates": {"latitude": 30.6652, "longitude": 73.1062},
+    "adjacent_districts": ["Okara", "Vehari", "Kasur", "Faisalabad"]
   },
   "Sheikhupura": {
-    "coordinates": {
-      "latitude": 31.7131,
-      "longitude": 73.9783
-    },
-    "adjacent_districts": [
-      "Nankana Sahib",
-      "Faisalabad",
-      "Sargodha",
-      "Okara"
-    ]
+    "coordinates": {"latitude": 31.7131, "longitude": 73.9783},
+    "adjacent_districts": ["Lahore", "Nankana Sahib", "Faisalabad", "Sargodha", "Okara"]
   },
   "Jhang": {
-    "coordinates": {
-      "latitude": 31.2742,
-      "longitude": 72.3183
-    },
-    "adjacent_districts": [
-      "Faisalabad",
-      "Toba Tek Singh",
-      "Chiniot",
-      "Sargodha"
-    ]
+    "coordinates": {"latitude": 31.2742, "longitude": 72.3183},
+    "adjacent_districts": ["Faisalabad", "Toba Tek Singh", "Chiniot", "Sargodha", "Layyah", "Multan"]
   },
   "Gujrat": {
-    "coordinates": {
-      "latitude": 32.5741,
-      "longitude": 74.0776
-    },
-    "adjacent_districts": [
-      "Sialkot",
-      "Sargodha",
-      "Hafizabad"
-    ]
+    "coordinates": {"latitude": 32.5741, "longitude": 74.0776},
+    "adjacent_districts": ["Sialkot", "Sargodha", "Hafizabad"]
   },
   "Kasur": {
-    "coordinates": {
-      "latitude": 31.115,
-      "longitude": 74.446
-    },
-    "adjacent_districts": [
-      "Nankana Sahib",
-      "Sheikhupura",
-      "Faisalabad",
-      "Okara"
-    ]
+    "coordinates": {"latitude": 31.1150, "longitude": 74.4460},
+    "adjacent_districts": ["Lahore", "Nankana Sahib", "Sheikhupura", "Faisalabad", "Okara"]
   },
   "Okara": {
-    "coordinates": {
-      "latitude": 30.8102,
-      "longitude": 73.459
-    },
-    "adjacent_districts": [
-      "Sheikhupura",
-      "Kasur",
-      "Faisalabad",
-      "Sahiwal"
-    ]
+    "coordinates": {"latitude": 30.8102, "longitude": 73.4590},
+    "adjacent_districts": ["Lahore", "Sheikhupura", "Kasur", "Faisalabad", "Sahiwal"]
   },
   "Attock": {
-    "coordinates": {
-      "latitude": 33.7663,
-      "longitude": 72.2516
-    },
-    "adjacent_districts": [
-      "Mianwali",
-      "Chakwal"
-    ]
+    "coordinates": {"latitude": 33.7663, "longitude": 72.2516},
+    "adjacent_districts": ["Rawalpindi", "Mianwali", "Chakwal"]
   },
   "Rahim Yar Khan": {
-    "coordinates": {
-      "latitude": 28.422,
-      "longitude": 70.2957
-    },
-    "adjacent_districts": [
-      "Bahawalpur",
-      "Rajanpur"
-    ]
+    "coordinates": {"latitude": 28.4220, "longitude": 70.2957},
+    "adjacent_districts": ["Bahawalpur", "Layyah", "Rajanpur"]
   },
   "Vehari": {
-    "coordinates": {
-      "latitude": 30.0455,
-      "longitude": 72.3488
-    },
-    "adjacent_districts": [
-      "Khanewal",
-      "Lodhran",
-      "Bahawalpur",
-      "Sahiwal"
-    ]
+    "coordinates": {"latitude": 30.0455, "longitude": 72.3488},
+    "adjacent_districts": ["Multan", "Khanewal", "Lodhran", "Bahawalpur", "Layyah", "Sahiwal"]
   },
   "Jhelum": {
-    "coordinates": {
-      "latitude": 32.9336,
-      "longitude": 73.7274
-    },
-    "adjacent_districts": [
-      "Chakwal",
-      "Gujrat",
-      "Khushab"
-    ]
+    "coordinates": {"latitude": 32.9336, "longitude": 73.7274},
+    "adjacent_districts": ["Rawalpindi", "Chakwal", "Gujrat", "Khushab"]
   },
   "Chiniot": {
-    "coordinates": {
-      "latitude": 31.7208,
-      "longitude": 72.9781
-    },
-    "adjacent_districts": [
-      "Faisalabad",
-      "Toba Tek Singh",
-      "Jhang",
-      "Sargodha"
-    ]
+    "coordinates": {"latitude": 31.7208, "longitude": 72.9781},
+    "adjacent_districts": ["Faisalabad", "Toba Tek Singh", "Jhang", "Sargodha"]
   },
   "Khanewal": {
-    "coordinates": {
-      "latitude": 30.3032,
-      "longitude": 71.9328
-    },
-    "adjacent_districts": [
-      "Vehari",
-      "Lodhran",
-      "Muzaffargarh"
-    ]
+    "coordinates": {"latitude": 30.3032, "longitude": 71.9328},
+    "adjacent_districts": ["Multan", "Vehari", "Lodhran", "Muzaffargarh"]
   },
   "Toba Tek Singh": {
-    "coordinates": {
-      "latitude": 30.9744,
-      "longitude": 72.4086
-    },
-    "adjacent_districts": [
-      "Faisalabad",
-      "Jhang",
-      "Chiniot"
-    ]
+    "coordinates": {"latitude": 30.9744, "longitude": 72.4086},
+    "adjacent_districts": ["Faisalabad", "Jhang", "Chiniot"]
+  },
+  "Layyah": {
+    "coordinates": {"latitude": 30.9566, "longitude": 70.9464},
+    "adjacent_districts": ["Multan", "Rajanpur", "Muzaffargarh", "Vehari"]
   },
   "Mianwali": {
-    "coordinates": {
-      "latitude": 32.5747,
-      "longitude": 71.5375
-    },
-    "adjacent_districts": [
-      "Attock",
-      "Chakwal",
-      "Khushab",
-      "Sargodha"
-    ]
+    "coordinates": {"latitude": 32.5747, "longitude": 71.5375},
+    "adjacent_districts": ["Rawalpindi", "Attock", "Chakwal", "Khushab", "Sargodha"]
   },
   "Rajanpur": {
-    "coordinates": {
-      "latitude": 29.1038,
-      "longitude": 70.3293
-    },
-    "adjacent_districts": [
-      "Muzaffargarh",
-      "Bahawalpur"
-    ]
+    "coordinates": {"latitude": 29.1038, "longitude": 70.3293},
+    "adjacent_districts": ["Layyah", "Muzaffargarh", "Bahawalpur"]
   },
   "Nankana Sahib": {
-    "coordinates": {
-      "latitude": 31.4475,
-      "longitude": 73.6961
-    },
-    "adjacent_districts": [
-      "Sheikhupura",
-      "Kasur"
-    ]
+    "coordinates": {"latitude": 31.4475, "longitude": 73.6961},
+    "adjacent_districts": ["Lahore", "Sheikhupura", "Kasur"]
   },
   "Hafizabad": {
-    "coordinates": {
-      "latitude": 32.0679,
-      "longitude": 73.6845
-    },
-    "adjacent_districts": [
-      "Gujranwala",
-      "Gujrat",
-      "Sialkot"
-    ]
+    "coordinates": {"latitude": 32.0679, "longitude": 73.6845},
+    "adjacent_districts": ["Gujranwala", "Gujrat", "Sialkot"]
   },
   "Lodhran": {
-    "coordinates": {
-      "latitude": 29.5382,
-      "longitude": 71.6262
-    },
-    "adjacent_districts": [
-      "Vehari",
-      "Khanewal",
-      "Bahawalpur"
-    ]
+    "coordinates": {"latitude": 29.5382, "longitude": 71.6262},
+    "adjacent_districts": ["Multan", "Vehari", "Khanewal", "Bahawalpur"]
+  },
+  "Kasur": {
+    "coordinates": {"latitude": 31.1150, "longitude": 74.4460},
+    "adjacent_districts": ["Lahore", "Nankana Sahib", "Sheikhupura", "Faisalabad", "Okara"]
+  },
+  "Okara": {
+    "coordinates": {"latitude": 30.8102, "longitude": 73.4590},
+    "adjacent_districts": ["Lahore", "Sheikhupura", "Kasur", "Faisalabad", "Sahiwal"]
   },
   "Chakwal": {
-    "coordinates": {
-      "latitude": 32.9336,
-      "longitude": 72.8605
-    },
-    "adjacent_districts": [
-      "Jhelum",
-      "Attock",
-      "Mianwali",
-      "Khushab"
-    ]
+    "coordinates": {"latitude": 32.9336, "longitude": 72.8605},
+    "adjacent_districts": ["Rawalpindi", "Jhelum", "Attock", "Mianwali", "Khushab"]
   },
   "Khushab": {
-    "coordinates": {
-      "latitude": 32.2959,
-      "longitude": 72.4075
-    },
-    "adjacent_districts": [
-      "Sargodha",
-      "Mianwali",
-      "Chakwal",
-      "Jhelum"
-    ]
+    "coordinates": {"latitude": 32.2959, "longitude": 72.4075},
+    "adjacent_districts": ["Sargodha", "Mianwali", "Chakwal", "Jhelum"]
   },
   "Bhakkar": {
-    "coordinates": {
-      "latitude": 31.6304,
-      "longitude": 71.0654
-    },
-    "adjacent_districts": [
-      "Muzaffargarh",
-      "Jhang",
-      "Khushab"
-    ]
+    "coordinates": {"latitude": 31.6304, "longitude": 71.0654},
+    "adjacent_districts": ["Layyah", "Muzaffargarh", "Jhang", "Khushab"]
+  },
+  "Toba Tek Singh": {
+    "coordinates": {"latitude": 30.9744, "longitude": 72.4086},
+    "adjacent_districts": ["Faisalabad", "Jhang", "Chiniot"]
+  },
+  "Layyah": {
+    "coordinates": {"latitude": 30.9566, "longitude": 70.9464},
+    "adjacent_districts": ["Multan", "Rajanpur", "Muzaffargarh", "Vehari"]
   },
   "Muzaffargarh": {
-    "coordinates": {
-      "latitude": 30.0702,
-      "longitude": 71.1932
-    },
-    "adjacent_districts": [
-      "Rajanpur",
-      "Khanewal",
-      "Vehari"
-    ]
-  },
-  "Lahore": {
-    "coordinates": {
-      "latitude": 123.21,
-      "longitude": 12.31
-    },
-    "adjacent_districts": [
-      "Muzaffargarh"
-    ]
-  },
-  "Lodike": {
-    "coordinates": {
-      "latitude": 12.3,
-      "longitude": 12.11
-    },
-    "adjacent_districts": [
-      "Jhelum"
-    ]
-  },
-  "Rawanpindi": {
-    "coordinates": {
-      "latitude": 12.2,
-      "longitude": 11.23
-    },
-    "adjacent_districts": [
-      "Jhelum"
-    ]
+    "coordinates": {"latitude": 30.0702, "longitude": 71.1932},
+    "adjacent_districts": ["Layyah", "Rajanpur", "Multan", "Khanewal", "Vehari"]
   }
 }

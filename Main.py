@@ -265,10 +265,10 @@ def visualizeShortestPath(graph, source, destination):
             G2.add_edge(node.value, neighbor.value, label=f"{distanceOnEarth(node.latitude, node.longitude, neighbor.latitude, neighbor.longitude)}")
 
     pos = nx.get_node_attributes(G, 'pos')
-    nx.draw(G, pos, with_labels=True, font_weight='bold', node_size=1, node_color='skyblue', font_color='black', font_size=6, edge_color='blue')
+    nx.draw(G, pos, with_labels=True, font_weight='bold', node_size=1, node_color='skyblue', font_color='black', font_size=10, edge_color='blue')
     edgeLabels = nx.get_edge_attributes(G, 'label')
     nx.draw_networkx_edge_labels(G, pos, edge_labels=edgeLabels, font_size=6)
-    nx.draw(G2, pos, node_size=1, node_color='skyblue', font_color='black', font_size=6, edge_color='red')
+    nx.draw(G2, pos, node_size=1, node_color='skyblue', font_color='black', font_size=10, edge_color='red')
     plt.title("Graph Visualization")
     plt.show()
     
@@ -342,5 +342,5 @@ def startRemovePage():
 
 
 if __name__ == "__main__":
-    startPage1()
+    startPage3()
     app.exec_()
