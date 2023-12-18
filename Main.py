@@ -6,7 +6,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import csv
 
-class MyMainWindow(QtWidgets.QMainWindow):
+class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
     def __init__(self, path):
         super(MyMainWindow, self).__init__()
         uic.loadUi(path, self)
@@ -210,13 +210,41 @@ class MyMainWindow(QtWidgets.QMainWindow):
             json.dump(city_data, file, indent=2)
 
         QtWidgets.QMessageBox.information(None, "City Added", f"{city_name} added successfully!")
+        
+    def remove_city(self):
+        city_name = self.cityname.text().strip()
+
+        with open('data.txt', 'r') as file:
+            data = json.load(file)
+
+        if city_name in data:
+            for city, info in data.items():
+                if city != city_name and city_name in info['adjacent_districts']:
+                    info['adjacent_districts'].remove(city_name)
+
+            del data[city_name]
+
+            with open('data.txt', 'w') as file:
+                json.dump(data, file, indent=2)
+            
+            print(f"{city_name} has been removed.")
+        else:
+            print(f"{city_name} does not exist in the data.")
+
+        self.cityname.clear()
     
     def initPage4(self):
         self.load_data()
-        self.addcitybtn.clicked.connect(startAddPage)
+        self.addcity.clicked.connect(startAddPage)
+        self.addcity_2.clicked.connect(startRemovePage)
+        self.Reload.clicked.connect(self.load_data)
 
     def initPage5(self):
         self.addcity.clicked.connect(self.save_city_details)
+        
+    def initPage6(self):
+        self.Removebtn.clicked.connect(self.remove_city)
+        
 
 def visualizeShortestPath(graph, source, destination):
     G = nx.Graph()
@@ -278,6 +306,7 @@ page2 = MyMainWindow("./SignIn.ui")
 page3 = MyMainWindow("./Map.ui")
 page4 = MyMainWindow("./Admin.ui")
 page5 = MyMainWindow("./Addcity.ui")
+page6 = MyMainWindow("./Removecity.ui")
 
 def startPage1():
     page1.show()
@@ -306,8 +335,12 @@ def startAdminPage():
 def startAddPage():
     page5.show()
     page5.initPage5()
+    
+def startRemovePage():
+    page6.show()
+    page6.initPage6()
 
 
 if __name__ == "__main__":
-    startAdminPage()
+    startPage1()
     app.exec_()
