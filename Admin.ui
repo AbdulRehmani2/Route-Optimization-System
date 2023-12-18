@@ -106,7 +106,7 @@ color: white;</string>
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>210</y>
+      <y>260</y>
       <width>201</width>
       <height>51</height>
      </rect>
@@ -124,7 +124,7 @@ color: white;</string>
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>300</y>
+      <y>360</y>
       <width>201</width>
       <height>51</height>
      </rect>
@@ -136,6 +136,24 @@ color: white;</string>
     </property>
     <property name="text">
      <string>Remove City</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addcity_3">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>160</y>
+      <width>201</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">padding: 5px;
+background-color: #0A1172;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Add User</string>
     </property>
    </widget>
   </widget>

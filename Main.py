@@ -38,7 +38,8 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
             writer = csv.writer(file)
             encrypted_password = self.__encryption(passwordText, 3)
             encrypted_email = self.__encryption(emailText, 3) 
-            writer.writerow([usernameText, encrypted_password, encrypted_email])
+            role="User"
+            writer.writerow([usernameText, encrypted_password, encrypted_email,role])
             
     def __encryption(self, text, shift):
         encrypted_text = ""
@@ -87,12 +88,15 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
     def __signIn(self):
         usernameText = self.usernameText.text()
         passwordText = self.passwordText.text()
-        authenticated, decrypted_email = self.__readCSV(usernameText, passwordText)
+        authenticated, decrypted_email,role = self.__readCSV(usernameText, passwordText)
         if authenticated:
             QMessageBox.warning(None, "Login successful!", f"Email: {decrypted_email}")
             self.usernameText.clear()
             self.passwordText.clear()
-            startPage3()
+            if role == "Admin":
+                print("Welcome Boss")
+            else:
+                startPage3()
         else:
             self.usernameText.clear()
             self.passwordText.clear()
@@ -106,10 +110,11 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
                     decrypted_password = self.__decryption(row[1], 3)
                     if password == decrypted_password:
                         decrypted_email = self.__decryption(row[2], 3) 
-                        return True, decrypted_email
+                        role=row[3]
+                        return True, decrypted_email,role
                     else:
-                        return False, None
-            return False, None 
+                        return False, None, None
+            return False, None, None
     
     def __decryption(self, text, shift):
         decrypted_text = ""
@@ -342,5 +347,5 @@ def startRemovePage():
 
 
 if __name__ == "__main__":
-    startPage3()
+    startPage2()
     app.exec_()
