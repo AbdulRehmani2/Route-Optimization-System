@@ -1,6 +1,7 @@
-from PyQt5 import QtWidgets, uic
+from PyQt5 import QtWidgets, uic, QtCore
 from PyQt5.QtWidgets import QMessageBox
 from graph import Graph, createMap, distanceOnEarth, visualizeShortestPath
+from AddUser import addUser
 import json
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -94,7 +95,7 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
             self.usernameText.clear()
             self.passwordText.clear()
             if role == "Admin":
-                print("Welcome Boss")
+                startAdminPage()
             else:
                 startPage3()
         else:
@@ -240,9 +241,14 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
     
     def initPage4(self):
         self.load_data()
-        self.addcity.clicked.connect(startAddPage)
-        self.addcity_2.clicked.connect(startRemovePage)
+        self.addcitybtn.clicked.connect(startAddPage)
+        self.removecitybtn.clicked.connect(startRemovePage)
         self.Reload.clicked.connect(self.load_data)
+        self.add_userbtn.clicked.connect(startPage7)
+        self.tableWidget.setColumnWidth(0, 200)
+        self.tableWidget.setRowHeight(0, 30)
+        self.tableWidget.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)  
+        self.tableWidget.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
 
     def initPage5(self):
         self.addcity.clicked.connect(self.save_city_details)
@@ -250,6 +256,10 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
     def initPage6(self):
         self.Removebtn.clicked.connect(self.remove_city)
         
+    def initPage7(self):
+        self.addUser.clicked.connect(self.__signUp)
+        self.passwordText.setEchoMode(QtWidgets.QLineEdit.Password)
+
 
 def visualizeShortestPath(graph, source, destination):
     G = nx.Graph()
@@ -312,6 +322,7 @@ page3 = MyMainWindow("./Map.ui")
 page4 = MyMainWindow("./Admin.ui")
 page5 = MyMainWindow("./Addcity.ui")
 page6 = MyMainWindow("./Removecity.ui")
+page7 = MyMainWindow("./AddUser.ui")
 
 def startPage1():
     page1.show()
@@ -345,6 +356,9 @@ def startRemovePage():
     page6.show()
     page6.initPage6()
 
+def startPage7():
+    page7.show()
+    page7.initPage7()
 
 if __name__ == "__main__":
     startPage2()

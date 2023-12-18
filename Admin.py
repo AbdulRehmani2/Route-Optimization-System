@@ -12,7 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets, uic
 import json
 from Addcity2 import AddCity
 from Removecity import RemoveCityWindow
-
+from AddUser import addUser
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -37,7 +37,6 @@ class Ui_Dialog(object):
         self.label_5.setFont(font)
         self.label_5.setStyleSheet("color: white;")
         self.label_5.setObjectName("label_5")
-
         self.Reload = QtWidgets.QPushButton(self.frame)
         self.Reload.setGeometry(QtCore.QRect(1000, 90, 111, 31))
         self.Reload.setStyleSheet("padding: 5px;\n"
@@ -47,7 +46,6 @@ class Ui_Dialog(object):
         icon.addPixmap(QtGui.QPixmap("reloadIcon-removebg-preview.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.Reload.setIcon(icon)
         self.Reload.setObjectName("Reload")
-
         self.frame_2 = QtWidgets.QFrame(Dialog)
         self.frame_2.setGeometry(QtCore.QRect(0, 130, 271, 691))
         self.frame_2.setStyleSheet("background-color: #0A1172;\n"
@@ -56,17 +54,23 @@ class Ui_Dialog(object):
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
         self.addcitybtn = QtWidgets.QPushButton(self.frame_2)
-        self.addcitybtn.setGeometry(QtCore.QRect(40, 210, 201, 51))
+        self.addcitybtn.setGeometry(QtCore.QRect(40, 260, 201, 51))
         self.addcitybtn.setStyleSheet("padding: 5px;\n"
 "background-color: #0A1172;\n"
 "color: white;")
         self.addcitybtn.setObjectName("addcitybtn")
         self.removecitybtn = QtWidgets.QPushButton(self.frame_2)
-        self.removecitybtn.setGeometry(QtCore.QRect(40, 300, 201, 51))
+        self.removecitybtn.setGeometry(QtCore.QRect(40, 360, 201, 51))
         self.removecitybtn.setStyleSheet("padding: 5px;\n"
 "background-color: #0A1172;\n"
 "color: white;")
         self.removecitybtn.setObjectName("removecitybtn")
+        self.add_userbtn = QtWidgets.QPushButton(self.frame_2)
+        self.add_userbtn.setGeometry(QtCore.QRect(40, 160, 201, 51))
+        self.add_userbtn.setStyleSheet("padding: 5px;\n"
+"background-color: #0A1172;\n"
+"color: white;")
+        self.add_userbtn.setObjectName("add_userbtn")
         self.tableWidget = QtWidgets.QTableWidget(Dialog)
         self.tableWidget.setGeometry(QtCore.QRect(265, 131, 851, 691))
         self.tableWidget.setObjectName("tableWidget")
@@ -94,10 +98,11 @@ class Ui_Dialog(object):
         self.load_data()  # Call function to load data when UI is set up
         self.addcitybtn.clicked.connect(self.loadAddCity)
         self.removecitybtn.clicked.connect(self.loadRemoveCity)
+        self.add_userbtn.clicked.connect(self.loadAddUser)
         self.add_city_dialog = None 
         self.removeDialog = None
+        self.add_user_dialog=None
         self.Reload.clicked.connect(self.reload_data)
-        
 
     def retranslateUi(self, Dialog):
         # ... (your existing retranslateUi function)
@@ -106,6 +111,7 @@ class Ui_Dialog(object):
         self.label_5.setText(_translate("Dialog", "Route Optimization and Management System"))
         self.addcitybtn.setText(_translate("Dialog", "Add City"))
         self.removecitybtn.setText(_translate("Dialog", "Remove City"))
+        self.add_userbtn.setText(_translate("Dialog", "Add User"))
         item = self.tableWidget.horizontalHeaderItem(0)
         item.setText(_translate("Dialog", "City Name"))
         item = self.tableWidget.horizontalHeaderItem(1)
@@ -129,6 +135,13 @@ class Ui_Dialog(object):
             self.removeUi.setupUi(self.removeDialog)
         self.removeDialog.show()
     
+    def loadAddUser(self):
+        if self.add_user_dialog is None:
+            self.add_user_dialog = QtWidgets.QDialog()
+            self.addUserUi = addUser()
+            self.addUserUi.setupUi(self.add_user_dialog)
+        self.add_user_dialog.show()
+
     def reload_data(self):
         self.load_data()
 
