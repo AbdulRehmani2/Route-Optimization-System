@@ -50,18 +50,24 @@ class Ui_Dialog(object):
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
-        self.addcity = QtWidgets.QPushButton(self.frame_2)
-        self.addcity.setGeometry(QtCore.QRect(40, 210, 201, 51))
-        self.addcity.setStyleSheet("padding: 5px;\n"
+        self.addcitybtn = QtWidgets.QPushButton(self.frame_2)
+        self.addcitybtn.setGeometry(QtCore.QRect(40, 260, 201, 51))
+        self.addcitybtn.setStyleSheet("padding: 5px;\n"
 "background-color: #0A1172;\n"
 "color: white;")
-        self.addcity.setObjectName("addcity")
-        self.addcity_2 = QtWidgets.QPushButton(self.frame_2)
-        self.addcity_2.setGeometry(QtCore.QRect(40, 300, 201, 51))
-        self.addcity_2.setStyleSheet("padding: 5px;\n"
+        self.addcitybtn.setObjectName("addcitybtn")
+        self.removecitybtn = QtWidgets.QPushButton(self.frame_2)
+        self.removecitybtn.setGeometry(QtCore.QRect(40, 360, 201, 51))
+        self.removecitybtn.setStyleSheet("padding: 5px;\n"
 "background-color: #0A1172;\n"
 "color: white;")
-        self.addcity_2.setObjectName("addcity_2")
+        self.removecitybtn.setObjectName("removecitybtn")
+        self.add_userbtn = QtWidgets.QPushButton(self.frame_2)
+        self.add_userbtn.setGeometry(QtCore.QRect(40, 160, 201, 51))
+        self.add_userbtn.setStyleSheet("padding: 5px;\n"
+"background-color: #0A1172;\n"
+"color: white;")
+        self.add_userbtn.setObjectName("add_userbtn")
         self.tableWidget = QtWidgets.QTableWidget(Dialog)
         self.tableWidget.setGeometry(QtCore.QRect(275, 131, 841, 691))
         self.tableWidget.setObjectName("tableWidget")
@@ -84,8 +90,9 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.label_5.setText(_translate("Dialog", "Route Optimization and Management System"))
         self.Reload.setText(_translate("Dialog", "Reload"))
-        self.addcity.setText(_translate("Dialog", "Add City"))
-        self.addcity_2.setText(_translate("Dialog", "Remove City"))
+        self.addcitybtn.setText(_translate("Dialog", "Add City"))
+        self.removecitybtn.setText(_translate("Dialog", "Remove City"))
+        self.add_userbtn.setText(_translate("Dialog", "Add User"))
         item = self.tableWidget.horizontalHeaderItem(0)
         item.setText(_translate("Dialog", "City Name"))
         item = self.tableWidget.horizontalHeaderItem(1)

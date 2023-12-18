@@ -102,7 +102,7 @@ color: white;</string>
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QPushButton" name="addcity">
+   <widget class="QPushButton" name="addcitybtn">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -120,7 +120,7 @@ color: white;</string>
      <string>Add City</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="addcity_2">
+   <widget class="QPushButton" name="removecitybtn">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -138,7 +138,7 @@ color: white;</string>
      <string>Remove City</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="addcity_3">
+   <widget class="QPushButton" name="add_userbtn">
     <property name="geometry">
      <rect>
       <x>40</x>
