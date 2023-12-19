@@ -239,11 +239,61 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
 
         self.cityname.clear()
     
+    def merge_sort(self, data):
+        if len(data) <= 1:
+            return data
+        middle = len(data) // 2
+        left_half = data[:middle]
+        right_half = data[middle:]
+
+        left_half = self.merge_sort(left_half)
+        right_half = self.merge_sort(right_half)
+
+        return self.merge(left_half, right_half)
+
+    def merge(self, left, right):
+        result = []
+        left_idx = right_idx = 0
+
+        while left_idx < len(left) and right_idx < len(right):
+            if left[left_idx][0] < right[right_idx][0]:
+                result.append(left[left_idx])
+                left_idx += 1
+            else:
+                result.append(right[right_idx])
+                right_idx += 1
+
+        result.extend(left[left_idx:])
+        result.extend(right[right_idx:])
+
+        return result
+
+    def sort_table_by_city(self):
+        data = []
+        for row in range(self.tableWidget.rowCount()):
+            city_name = self.tableWidget.item(row, 0).text()
+            latitude = float(self.tableWidget.item(row, 1).text())
+            longitude = float(self.tableWidget.item(row, 2).text())
+            adjacent_cities = self.tableWidget.item(row, 3).text()
+
+            data.append((city_name, latitude, longitude, adjacent_cities))
+
+        sorted_data = self.merge_sort(data)
+
+        for row, city_data in enumerate(sorted_data):
+            city_name, latitude, longitude, adjacent_cities = city_data
+            self.tableWidget.setItem(row, 0, QtWidgets.QTableWidgetItem(city_name))
+            self.tableWidget.setItem(row, 1, QtWidgets.QTableWidgetItem(str(latitude)))
+            self.tableWidget.setItem(row, 2, QtWidgets.QTableWidgetItem(str(longitude)))
+            self.tableWidget.setItem(row, 3, QtWidgets.QTableWidgetItem(adjacent_cities))
+
+
     def initPage4(self):
         self.load_data()
         self.addcitybtn.clicked.connect(startAddPage)
         self.removecitybtn.clicked.connect(startRemovePage)
         self.Reload.clicked.connect(self.load_data)
+        self.sortbtn.clicked.connect(self.sort_table_by_city)
         self.add_userbtn.clicked.connect(startPage7)
         self.tableWidget.setColumnWidth(0, 200)
         self.tableWidget.setRowHeight(0, 30)
