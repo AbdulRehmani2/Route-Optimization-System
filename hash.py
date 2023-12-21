@@ -20,13 +20,15 @@ class hashTable:
     
     def addElement(self, element, key, key2, key3):
         index = self.hashFunction(element)
-        if(self.table[index] == None):
+        if self.table[index] is None:
             self.table[index] = Node(element, key, key2, key3)
         else:
             i = index
-            while(i == None and i < self.size):
-                i+=1
-            self.table[i] = Node(element, key, key2, key3)
+            while i < self.size:
+                if self.table[i] is None:
+                    self.table[i] = Node(element, key, key2, key3)
+                    break
+                i += 1
             # node = self.table[index]
             # while node != None:
             #     node = node.next
@@ -42,10 +44,10 @@ class hashTable:
     def searchElement(self, element):
         index = self.hashFunction(element)
         i = index
-        while i == None and i < self.size:
-            i+=1
-        if(self.table[i].value == element):
-            return self.table[i]
+        while i < self.size:
+            if self.table[i] is not None and self.table[i].value == element:
+                return self.table[i]
+            i += 1
         return None
                 
     def printTable(self):
@@ -55,6 +57,12 @@ class hashTable:
                 print(node.value, node.key)
                 node = node.next
         # print(self.table)
+    def printAllValues(self):
+        j = 0
+        for i in self.table:
+            value = None if i == None else i.value
+            print(value, j)
+            j+=1
 
     def storeTable(self):
         file = open("table.txt", "w")
@@ -82,10 +90,13 @@ class hashTable:
         
 
 # array = [("Size", 3, 1), ("length", 4, 2), ("height", 5, 4), ("name", 5, 2)]
-# hash = hashTable(200)
+# hash = hashTable(500)
 # hash.addArray(array)
 # print(hash.searchElement("Size"))
+# hash.addElement("AbdulRehman", "45678901", "AbdulRehman@gmail.com", "Admin")
+# hash.addElement("Hamza", "45678901", "hamza@gmail.com", "User")
+# hash.storeTable()
 # hash.loadTable()
-# print(hash.searchElement('Hamid'))
+# print(hash.searchElement('AbdulRehman'))
 # hash.printTable()
         

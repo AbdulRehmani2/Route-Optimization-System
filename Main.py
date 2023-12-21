@@ -4,14 +4,12 @@ from graph import Graph, createMap, distanceOnEarth, visualizeShortestPath
 import json
 import networkx as nx
 import matplotlib.pyplot as plt
-import csv
 from hash import hashTable
 
 class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
     def __init__(self, path):
         super(MyMainWindow, self).__init__()
         uic.loadUi(path, self)
-        self.hash = hashTable(200)
         
     def initPage1(self):
         self.SignUpButton.clicked.connect(self.__signUp)
@@ -44,8 +42,9 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
     #         writer.writerow([usernameText, encrypted_password, encrypted_email,role])
     
     def __writeToCsv(self, username, passwordText, emailText):
-        self.hash.addElement(username, self.__encryption(passwordText, 3), emailText, "User")
-        self.hash.storeTable()
+        hash.addElement(username, self.__encryption(passwordText, 3), emailText, "User")
+        hash.storeTable()
+        # hash.printTable()
             
     def __encryption(self, text, shift):
         encrypted_text = ""
@@ -90,24 +89,30 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
         self.SignUpButton.clicked.connect(self.__signIn)
         self.BackButton.clicked.connect(startPage1)
         self.passwordText.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.hash.loadTable()
         
     def __signIn(self):
         usernameText = self.usernameText.text()
         passwordText = self.passwordText.text()
-        authenticated, decrypted_email,role = self.__readCSV(usernameText, passwordText)
-        if authenticated:
-            QMessageBox.warning(None, "Login successful!", f"Email: {decrypted_email}")
-            self.usernameText.clear()
-            self.passwordText.clear()
-            if role == "Admin":
-                startAdminPage()
-            else:
-                startPage3()
-        else:
+        print(usernameText, passwordText)
+        login = self.__readCSV(usernameText, passwordText)
+        if(login == None):
             self.usernameText.clear()
             self.passwordText.clear()
             QMessageBox.warning(None, "Invalid credentials", "Please try again.")
+        else:
+            authenticated, decrypted_email,role = True, login.key2, login.key3
+            if authenticated:
+                QMessageBox.warning(None, "Login successful!", f"Email: {decrypted_email}")
+                self.usernameText.clear()
+                self.passwordText.clear()
+                if role == "Admin":
+                    startAdminPage()
+                else:
+                    startPage3()
+            # else:
+            #     self.usernameText.clear()
+            #     self.passwordText.clear()
+            #     QMessageBox.warning(None, "Invalid credentials", "Please try again.")
             
     # def __readCSV(self, username, password):
     #     with open('users.csv', mode='r') as file:
@@ -124,10 +129,12 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
     #         return False, None, None
     
     def __readCSV(self, username, password):
-        self.hash.printTable()
-        user = self.hash.searchElement(username)
+        user = hash.searchElement(username)
         if user != None:
-            return user.key == self.__encryption(password, 3), user.key2, user.key3
+            if(self.__encryption(password, 3) == user.key):
+                return user
+        else:
+            return None
             
     
     def initPage3(self):
@@ -360,6 +367,8 @@ page4 = MyMainWindow("./Admin.ui")
 page5 = MyMainWindow("./Addcity.ui")
 page6 = MyMainWindow("./Removecity.ui")
 page7 = MyMainWindow("./AddUser.ui")
+hash = hashTable(500)
+hash.loadTable()
 
 def startPage1():
     page1.show()
