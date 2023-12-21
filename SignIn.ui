@@ -150,7 +150,7 @@ background-color: #0A1172;
 color: white;</string>
     </property>
     <property name="text">
-     <string>Back</string>
+     <string>Sign Up</string>
     </property>
    </widget>
    <widget class="QPushButton" name="SignUpButton">
