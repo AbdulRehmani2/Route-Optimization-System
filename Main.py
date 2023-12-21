@@ -1,16 +1,17 @@
 from PyQt5 import QtWidgets, uic, QtCore
 from PyQt5.QtWidgets import QMessageBox
 from graph import Graph, createMap, distanceOnEarth, visualizeShortestPath
-from AddUser import addUser
 import json
 import networkx as nx
 import matplotlib.pyplot as plt
 import csv
+from hash import hashTable
 
 class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
     def __init__(self, path):
         super(MyMainWindow, self).__init__()
         uic.loadUi(path, self)
+        self.hash = hashTable(200)
         
     def initPage1(self):
         self.SignUpButton.clicked.connect(self.__signUp)
@@ -34,13 +35,17 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
         self.usernameText.clear()
         self.passwordText.clear()
             
-    def __writeToCsv(self, usernameText, passwordText, emailText):
-        with open('users.csv', mode='a', newline='') as file:
-            writer = csv.writer(file)
-            encrypted_password = self.__encryption(passwordText, 3)
-            encrypted_email = self.__encryption(emailText, 3) 
-            role="User"
-            writer.writerow([usernameText, encrypted_password, encrypted_email,role])
+    # def __writeToCsv(self, usernameText, passwordText, emailText):
+    #     with open('users.csv', mode='a', newline='') as file:
+    #         writer = csv.writer(file)
+    #         encrypted_password = self.__encryption(passwordText, 3)
+    #         encrypted_email = emailText
+    #         role="User"
+    #         writer.writerow([usernameText, encrypted_password, encrypted_email,role])
+    
+    def __writeToCsv(self, username, passwordText, emailText):
+        self.hash.addElement(username, self.__encryption(passwordText, 3), emailText, "User")
+        self.hash.storeTable()
             
     def __encryption(self, text, shift):
         encrypted_text = ""
@@ -85,6 +90,7 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
         self.SignUpButton.clicked.connect(self.__signIn)
         self.BackButton.clicked.connect(startPage1)
         self.passwordText.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.hash.loadTable()
         
     def __signIn(self):
         usernameText = self.usernameText.text()
@@ -103,45 +109,26 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
             self.passwordText.clear()
             QMessageBox.warning(None, "Invalid credentials", "Please try again.")
             
-    def __readCSV(self, username, password):
-        with open('users.csv', mode='r') as file:
-            reader = csv.reader(file)
-            for row in reader:
-                if username == row[0]:
-                    decrypted_password = self.__decryption(row[1], 3)
-                    if password == decrypted_password:
-                        decrypted_email = self.__decryption(row[2], 3) 
-                        role=row[3]
-                        return True, decrypted_email,role
-                    else:
-                        return False, None, None
-            return False, None, None
+    # def __readCSV(self, username, password):
+    #     with open('users.csv', mode='r') as file:
+    #         reader = csv.reader(file)
+    #         for row in reader:
+    #             if username == row[0]:
+    #                 storedPassword = row[1]
+    #                 if self.__encryption(password, 3) == storedPassword:
+    #                     storedEmail = row[2] 
+    #                     role=row[3]
+    #                     return True, storedEmail,role
+    #                 else:
+    #                     return False, None, None
+    #         return False, None, None
     
-    def __decryption(self, text, shift):
-        decrypted_text = ""
-        for char in text:
-            shifted = ord(char) - (shift % 26)
-            if char.isalpha():
-                if char.islower():
-                    if shifted > ord('z'):
-                        shifted -= 26
-                    elif shifted < ord('a'):
-                        shifted += 26
-                elif char.isupper():
-                    if shifted > ord('Z'):
-                        shifted -= 26
-                    elif shifted < ord('A'):
-                        shifted += 26
-                decrypted_text += chr(shifted)
-            elif char.isnumeric():
-                if shifted > ord('9'):
-                    shifted -= 10
-                elif shifted < ord('0'):
-                    shifted += 10
-                decrypted_text += chr(shifted)
-            else:
-                decrypted_text += char
-        return decrypted_text
+    def __readCSV(self, username, password):
+        self.hash.printTable()
+        user = self.hash.searchElement(username)
+        if user != None:
+            return user.key == self.__encryption(password, 3), user.key2, user.key3
+            
     
     def initPage3(self):
         self.myGraph = Graph()
