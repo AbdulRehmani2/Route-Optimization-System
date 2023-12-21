@@ -168,8 +168,9 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
         destination = self.destinationInput.currentText()
         source = searchNode(self.myGraph, source)
         destination = searchNode(self.myGraph, destination)
-        print(source, destination)
-        visualizeShortestPath(self.myGraph, source, destination)
+        mode = self.transportation.currentText()
+        # print(source, destination, mode)
+        visualizeShortestPath(self.myGraph, source, destination, mode)
 
     def load_data(self):
         with open('data.txt', 'r') as file:
@@ -305,7 +306,7 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
         self.passwordText.setEchoMode(QtWidgets.QLineEdit.Password)
 
 
-def visualizeShortestPath(graph, source, destination):
+def visualizeShortestPath(graph, source, destination, mode):
     G = nx.Graph()
     G2 = nx.Graph()
     graph.dijkstra(source)
@@ -313,6 +314,7 @@ def visualizeShortestPath(graph, source, destination):
     nodes = NodeToObject(path)
     newGraph = Graph()
     distance = destination.count if source != destination else 0
+    time = calculateTime(mode, distance) if distance != 0 else distance
     createMap(newGraph, nodes)
     for node in graph.vertices:
         G.add_node(node.value, pos=(node.longitude, node.latitude))
@@ -330,9 +332,22 @@ def visualizeShortestPath(graph, source, destination):
     edgeLabels = nx.get_edge_attributes(G, 'label')
     nx.draw_networkx_edge_labels(G, pos, edge_labels=edgeLabels, font_size=6)
     nx.draw(G2, pos, node_size=1, node_color='skyblue', font_color='black', font_size=10, edge_color='red')
-    plt.title(f"Total Distance : {distance}Km")
+    plt.title(f"Total Distance : {round(distance, 1)}Km \n Travelling on : {mode} \n Time Taken : {time}h")
     plt.show()
     
+def calculateTime(mode, distance):
+    speed = 0
+    if(distance == 0):
+        return
+    print(mode)
+    if mode == "Bicycle":
+        speed = 20
+    elif mode == "Car":
+        speed = 50
+    elif mode == "Foot":
+        speed = 10
+    return round((distance/speed), 1)
+
 def secondPath(source, target):
     node = target
     path = []
@@ -409,5 +424,5 @@ def startPage7():
     page7.initPage7()
 
 if __name__ == "__main__":
-    startPage3()
+    startPage1()
     app.exec_()
