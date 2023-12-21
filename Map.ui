@@ -23,8 +23,8 @@ border-bottom: 4px solid #0A1172;</string>
    <widget class="QPushButton" name="ShowMap">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>180</y>
+      <x>610</x>
+      <y>620</y>
       <width>121</width>
       <height>41</height>
      </rect>
@@ -68,7 +68,7 @@ color: #0a1172;
      <rect>
       <x>370</x>
       <y>370</y>
-      <width>111</width>
+      <width>141</width>
       <height>21</height>
      </rect>
     </property>
@@ -76,6 +76,9 @@ color: #0a1172;
      <font>
       <pointsize>12</pointsize>
      </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
     </property>
     <property name="styleSheet">
      <string notr="true">border: none;
@@ -90,7 +93,7 @@ border-bottom: 2px solid #0a1172;</string>
      <rect>
       <x>370</x>
       <y>460</y>
-      <width>111</width>
+      <width>141</width>
       <height>21</height>
      </rect>
     </property>
@@ -137,29 +140,11 @@ border-bottom: 2px solid #0a1172;</string>
      </font>
     </property>
    </widget>
-   <widget class="QPushButton" name="AllRouteButton">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>600</y>
-      <width>121</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border: none;
-background-color: #0a1172;
-color: white;</string>
-    </property>
-    <property name="text">
-     <string>All Routes</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="ShortestButton">
     <property name="geometry">
      <rect>
-      <x>800</x>
-      <y>600</y>
+      <x>780</x>
+      <y>620</y>
       <width>121</width>
       <height>41</height>
      </rect>
@@ -234,6 +219,58 @@ color: white;</string>
       <string>Route Optimization and Management System</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QComboBox" name="transportation">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>531</y>
+      <width>221</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <item>
+     <property name="text">
+      <string>Car</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Motorcycle</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Foot</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>540</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+border-bottom: 2px solid #0a1172;</string>
+    </property>
+    <property name="text">
+     <string>Transportation</string>
+    </property>
    </widget>
   </widget>
  </widget>

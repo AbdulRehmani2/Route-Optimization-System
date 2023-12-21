@@ -2,27 +2,9 @@ import math, heapq
 import queue as q
 import networkx as nx
 from matplotlib import pyplot as plt
+from Node import Node
+import json
 
-class Node:
-    
-    def __init__(self, value, latitude, longitude):
-        self.value = value
-        self.neighbors = []
-        self.latitude = latitude
-        self.longitude = longitude
-        self.status = "unvisited"
-        self.count = float("infinity")
-        self.previous = None
-        
-    def hasNeighbor(self):
-        return self.neighbors == []
-    
-    def getNeighbor(self):
-        return self.neighbors
-
-    def addNeighbor(self, vertex):
-        self.neighbor.append(vertex)        
-        
 class Graph:
     def __init__(self):
         self.vertices = []
@@ -91,6 +73,20 @@ class Graph:
                     i.count = distance
                     i.previous = element[1]
                     heapq.heappush(nodeList, (distance, i))
+    
+    def visualizeGraph(myGraph):
+        G = nx.Graph()
+        for node in myGraph.vertices:
+            G.add_node(node.value, pos=(node.longitude, node.latitude))
+            for neighbor in node.getNeighbor():
+                G.add_edge(node.value, neighbor.value, label=f"{distanceOnEarth(node.latitude, node.longitude, neighbor.latitude, neighbor.longitude)}")
+        
+        pos = nx.get_node_attributes(G, 'pos')
+        nx.draw(G, pos, with_labels=True, font_weight='bold', node_size=1, node_color='skyblue', font_color='black', font_size=9, edge_color='blue')
+        edgeLabels = nx.get_edge_attributes(G, 'label')
+        nx.draw_networkx_edge_labels(G, pos, edge_labels=edgeLabels, font_size=6)
+        plt.title("Graph Visualization")
+        plt.show()
             
 def createMap(graph, data):
     list = []
@@ -104,12 +100,7 @@ def createMap(graph, data):
             graph.addEdge(i, graph.vertices[index])
     return graph
         
-    
-def calculateDistance(lat1, lon1, lat2, lon2):
-        lat1 = pow(abs(lat1-lat2), 2)
-        lon1 = pow(abs(lon1-lon2), 2)
-        return math.sqrt(lon1 + lat1)
-    
+
 def distanceOnEarth(lat1, lon1, lat2, lon2):
     R = 6371.0
     lat1, lon1, lat2, lon2 = map(math.radians, [lat1, lon1, lat2, lon2])
@@ -140,11 +131,12 @@ def visualizeShortestPath(graph, source, destination):
             G2.add_edge(node.value, neighbor.value, label=f"{distanceOnEarth(node.latitude, node.longitude, neighbor.latitude, neighbor.longitude)}")
 
     pos = nx.get_node_attributes(G, 'pos')
+    plt.text(20, 60, 'This is a text annotation', fontsize=12, color='red', ha='center', va='bottom')
     nx.draw(G, pos, with_labels=True, font_weight='bold', node_size=1, node_color='skyblue', font_color='black', font_size=6, edge_color='blue')
     edgeLabels = nx.get_edge_attributes(G, 'label')
     nx.draw_networkx_edge_labels(G, pos, edge_labels=edgeLabels, font_size=6)
     nx.draw(G2, pos, node_size=1, node_color='skyblue', font_color='black', font_size=6, edge_color='red')
-    plt.title("Graph Visualization")
+    plt.title(f"Total Distance : {destination.count}Km")
     plt.show()
     
 def secondPath(source, target):
@@ -169,8 +161,8 @@ def NodeToObject(path):
         node = {"coordinates":{"latitude" : path[i].latitude, "longitude" : path[i].longitude}, "adjacent_districts" : neighbors}
         nodes[path[i].value] = node
     return nodes
-# file = open("./data.txt", "r")
-# data = json.load(file)
+file = open("./data.txt", "r")
+data = json.load(file)
         
 # for i in data:
 #     print(i["coordinates"]["latitude"])
@@ -178,6 +170,7 @@ def NodeToObject(path):
 # myGraph = Graph()
 # myGraph = createMap(myGraph, data)
 # myGraph.visualizeGraph()
+# visualizeShortestPath(myGraph, myGraph.vertices[0], myGraph.vertices[4])
 # myGraph.printVertices()
 # node1 = Node(1)
 # node2 = Node(2)

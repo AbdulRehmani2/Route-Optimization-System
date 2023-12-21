@@ -312,6 +312,7 @@ def visualizeShortestPath(graph, source, destination):
     path = secondPath(source, destination)
     nodes = NodeToObject(path)
     newGraph = Graph()
+    distance = destination.count if source != destination else 0
     createMap(newGraph, nodes)
     for node in graph.vertices:
         G.add_node(node.value, pos=(node.longitude, node.latitude))
@@ -324,11 +325,12 @@ def visualizeShortestPath(graph, source, destination):
             G2.add_edge(node.value, neighbor.value, label=f"{distanceOnEarth(node.latitude, node.longitude, neighbor.latitude, neighbor.longitude)}")
 
     pos = nx.get_node_attributes(G, 'pos')
+    plt.text(20, 60, 'This is a text annotation', fontsize=12, color='red', ha='center', va='bottom')
     nx.draw(G, pos, with_labels=True, font_weight='bold', node_size=1, node_color='skyblue', font_color='black', font_size=10, edge_color='blue')
     edgeLabels = nx.get_edge_attributes(G, 'label')
     nx.draw_networkx_edge_labels(G, pos, edge_labels=edgeLabels, font_size=6)
     nx.draw(G2, pos, node_size=1, node_color='skyblue', font_color='black', font_size=10, edge_color='red')
-    plt.title("Graph Visualization")
+    plt.title(f"Total Distance : {distance}Km")
     plt.show()
     
 def secondPath(source, target):
@@ -407,5 +409,5 @@ def startPage7():
     page7.initPage7()
 
 if __name__ == "__main__":
-    startPage2()
+    startPage3()
     app.exec_()
