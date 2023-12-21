@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1117</width>
+    <height>824</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #cccccc;
+</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1121</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #0A1172;
+</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>40</y>
+      <width>841</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sitka Text</family>
+      <pointsize>22</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;</string>
+    </property>
+    <property name="text">
+     <string>Route Optimization and Management System</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Reload">
+    <property name="geometry">
+     <rect>
+      <x>1000</x>
+      <y>90</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">padding: 5px;
+background-color: #0A1172;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Reload</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>reloadIcon-removebg-preview.png</normaloff>reloadIcon-removebg-preview.png</iconset>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="frame_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>130</y>
+     <width>271</width>
+     <height>691</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #0A1172;
+</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPushButton" name="addcitybtn">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>260</y>
+      <width>201</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">padding: 5px;
+background-color: #0A1172;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Add City</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="removecitybtn">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>360</y>
+      <width>201</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">padding: 5px;
+background-color: #0A1172;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Remove City</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="add_userbtn">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>160</y>
+      <width>201</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">padding: 5px;
+background-color: #0A1172;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Add User</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="sortbtn">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>650</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">padding: 5px;
+background-color: #0A1172;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Sort</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="backbtn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>650</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">padding: 5px;
+background-color: #0A1172;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Back</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>275</x>
+     <y>131</y>
+     <width>841</width>
+     <height>691</height>
+    </rect>
+   </property>
+   <column>
+    <property name="text">
+     <string>City Name</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>New Column</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Latitude</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Adjacent Cities</string>
+    </property>
+   </column>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
