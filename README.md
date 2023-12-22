@@ -10,25 +10,13 @@ Please install these dependencies first:
 + Pyqt5
 + Pyqt5-tools
 + Matplotlib
-+ Networkx# Route Optimization System
-
-Welcome to the Route Optimization System! This system will help you optimize routes between cities based on different modes of transportation. This guide will help you install and use the system properly.
-
-
-## Prerequisites
-
-Please install these dependencies first:
-+ Python
-+ Pyqt5
-+ Pyqt5-tools
-+ Matplotlib
 + Networkx
 
 First you need to install python, you can download it from the official site <https://www.python.org/downloads/>
 You can install git from the official website <https://git-scm.com/download/win>
 You can install rest of the dependencies one by one or by using the following command:
 ```bash
-pip install matplotlib
+pip install matplotlib networkx pyqt5 pyqt5-tools
 ```
 
 ## Starting the system
@@ -66,3 +54,7 @@ After logging in, you will see all the cities in a tabular form. Here you can pe
   This option will allow you to sort the cities alphabatically.
 + Reload
   To see any change brought by adding or removeing a city, you need to press the reload button present at the top right corner of the table.
+
+## Documentation
+The documentation for this project is at overleaf. You can access it as by using the link:
+<https://www.overleaf.com/read/mnkrhvmyjwzf#5a15fe>
