@@ -21,13 +21,18 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
         passwordText = self.passwordText.text()
         emailText = self.emailText.text()
         if self.__register(usernameText,emailText,passwordText):
-            self.__writeToCsv(usernameText, passwordText, emailText, "User")
-            QMessageBox.warning(self, "Message", "Account created successfully!")
-            self.clearText()
-            if(self != page4):
-                startPage2()
+            userExist = self.__readCSV(usernameText, passwordText)
+            if(userExist==None):
+                self.__writeToCsv(usernameText, passwordText, emailText, "User")
+                QMessageBox.warning(self, "Message", "Account created successfully!")
+                self.clearText()
+                if(self != page4):
+                    startPage2()
+                else:
+                    startAdminPage()
             else:
-                startAdminPage()
+                QMessageBox.warning(None, "Invalid credentials", "User already Exist in our database.")
+                self.clearText()
         else:
             self.clearText()
             
@@ -36,13 +41,18 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
         passwordText = self.passwordText.text()
         emailText = self.emailText.text()
         if self.__register(usernameText,emailText,passwordText):
-            self.__writeToCsv(usernameText, passwordText, emailText, "Admin")
-            QMessageBox.warning(self, "Message", "Account created successfully!")
-            self.clearText()
-            if(self != page4):
-                startPage2()
+            userExist = self.__readCSV(usernameText, passwordText)
+            if(userExist==None):
+                self.__writeToCsv(usernameText, passwordText, emailText, "Admin")
+                QMessageBox.warning(self, "Message", "Account created successfully!")
+                self.clearText()
+                if(self != page4):
+                    startPage2()
+                else:
+                    startAdminPage()
             else:
-                startAdminPage()
+                QMessageBox.warning(None, "Invalid credentials", "User already Exist in our database.")
+                self.clearText()
         else:
             self.clearText()
             
@@ -97,6 +107,9 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
             return False
         if not self.__isValid(emailText):
             QMessageBox.warning(None, "Registration Error", "Invalid email address. Please enter a valid email address.")
+            return  False
+        if len(passwordText) < 8:
+            QMessageBox.warning(None, "Registration Error", "Password Length atleast 8 digits")
             return  False
         return True
     
@@ -235,6 +248,11 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
             json.dump(city_data, file, indent=2)
 
         QtWidgets.QMessageBox.information(None, "City Added", f"{city_name} added successfully!")
+        self.cityname.clear()
+        self.latitude.clear()
+        self.longitude.clear()
+        self.adjacentDistricts.clear()
+
         
     def remove_city(self):
             
@@ -257,8 +275,10 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
                 json.dump(data, file, indent=2)
             
             print(f"{city_name} has been removed.")
+            QtWidgets.QMessageBox.information(None, "City Removed", f"{city_name} has been removed")
         else:
             print(f"{city_name} does not exist in the data.")
+            QMessageBox.warning(None, "Error", f"{city_name} does not exist in the data.")
 
         self.cityname.clear()
     
@@ -315,6 +335,8 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
             self.__signUp()
         else:
             self.__signUpAdmin()
+        selected_index = self.role.findText("-- Select Role --")
+        self.role.setCurrentIndex(selected_index)
         startAdminPage()
 
     def initPage4(self):
@@ -337,7 +359,7 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
         self.Removebtn.clicked.connect(self.remove_city)
         
     def initPage7(self):
-        self.addUser.clicked.connect(self.__addUser)
+        self.addUser.clicked.connect(self.__addUser)        
         self.passwordText.setEchoMode(QtWidgets.QLineEdit.Password)
 
 
