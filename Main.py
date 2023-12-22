@@ -21,10 +21,38 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
         passwordText = self.passwordText.text()
         emailText = self.emailText.text()
         if self.__register(usernameText,emailText,passwordText):
-            self.__writeToCsv(usernameText, passwordText, emailText)
-            QMessageBox.warning(self, "Message", "Account created successfully!")
+            userExist = self.__readCSV(usernameText, passwordText)
+            if(userExist==None):
+                self.__writeToCsv(usernameText, passwordText, emailText, "User")
+                QMessageBox.warning(self, "Message", "Account created successfully!")
+                self.clearText()
+                if(self != page4):
+                    startPage2()
+                else:
+                    startAdminPage()
+            else:
+                QMessageBox.warning(None, "Invalid credentials", "User already Exist in our database.")
+                self.clearText()
+        else:
             self.clearText()
-            startPage2()
+            
+    def __signUpAdmin(self):
+        usernameText = self.usernameText.text()
+        passwordText = self.passwordText.text()
+        emailText = self.emailText.text()
+        if self.__register(usernameText,emailText,passwordText):
+            userExist = self.__readCSV(usernameText, passwordText)
+            if(userExist==None):
+                self.__writeToCsv(usernameText, passwordText, emailText, "Admin")
+                QMessageBox.warning(self, "Message", "Account created successfully!")
+                self.clearText()
+                if(self != page4):
+                    startPage2()
+                else:
+                    startAdminPage()
+            else:
+                QMessageBox.warning(None, "Invalid credentials", "User already Exist in our database.")
+                self.clearText()
         else:
             self.clearText()
             
@@ -41,8 +69,8 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
     #         role="User"
     #         writer.writerow([usernameText, encrypted_password, encrypted_email,role])
     
-    def __writeToCsv(self, username, passwordText, emailText):
-        hash.addElement(username, self.__encryption(passwordText, 3), emailText, "User")
+    def __writeToCsv(self, username, passwordText, emailText, User):
+        hash.addElement(username, self.__encryption(passwordText, 3), emailText, User)
         hash.storeTable()
         # hash.printTable()
             
@@ -79,6 +107,9 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
             return False
         if not self.__isValid(emailText):
             QMessageBox.warning(None, "Registration Error", "Invalid email address. Please enter a valid email address.")
+            return  False
+        if len(passwordText) < 8:
+            QMessageBox.warning(None, "Registration Error", "Password Length atleast 8 digits")
             return  False
         return True
     
@@ -189,9 +220,15 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
 
     def save_city_details(self):
         city_name = self.cityname.text()
-        city_latitude = float(self.latitude.text())
-        city_longitude = float(self.longitude.text())
-        adjacent_districts = self.adjacentDistricts.text().split(',')
+        city_latitude = self.latitude.text()
+        city_longitude = self.longitude.text()
+        adjacent_districts = self.adjacentDistricts.text()
+        if(city_name == "" or city_latitude == "" or city_longitude == "" or adjacent_districts == ""):
+            QMessageBox.warning(None, "Error", "Please fill in all the required fields.")
+            return
+        city_latitude = float(city_latitude)
+        city_longitude = float(city_longitude)
+        adjacent_districts = adjacent_districts.split(',')
 
         try:
             with open('data.txt', 'r') as file:
@@ -211,9 +248,18 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
             json.dump(city_data, file, indent=2)
 
         QtWidgets.QMessageBox.information(None, "City Added", f"{city_name} added successfully!")
+        self.cityname.clear()
+        self.latitude.clear()
+        self.longitude.clear()
+        self.adjacentDistricts.clear()
+
         
     def remove_city(self):
+            
         city_name = self.cityname.text().strip()
+        if(city_name == ""):
+            QMessageBox.warning(None, "Error", "Please fill in all the required fields.")
+            return
 
         with open('data.txt', 'r') as file:
             data = json.load(file)
@@ -229,8 +275,10 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
                 json.dump(data, file, indent=2)
             
             print(f"{city_name} has been removed.")
+            QtWidgets.QMessageBox.information(None, "City Removed", f"{city_name} has been removed")
         else:
             print(f"{city_name} does not exist in the data.")
+            QMessageBox.warning(None, "Error", f"{city_name} does not exist in the data.")
 
         self.cityname.clear()
     
@@ -282,6 +330,14 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
             self.tableWidget.setItem(row, 2, QtWidgets.QTableWidgetItem(str(longitude)))
             self.tableWidget.setItem(row, 3, QtWidgets.QTableWidgetItem(adjacent_cities))
 
+    def __addUser(self):
+        if self.role.currentText() == "User":
+            self.__signUp()
+        else:
+            self.__signUpAdmin()
+        selected_index = self.role.findText("-- Select Role --")
+        self.role.setCurrentIndex(selected_index)
+        startAdminPage()
 
     def initPage4(self):
         self.load_data()
@@ -303,7 +359,7 @@ class MyMainWindow(QtWidgets.QMainWindow, QtWidgets.QDialog):
         self.Removebtn.clicked.connect(self.remove_city)
         
     def initPage7(self):
-        self.addUser.clicked.connect(self.__signUp)
+        self.addUser.clicked.connect(self.__addUser)        
         self.passwordText.setEchoMode(QtWidgets.QLineEdit.Password)
 
 
@@ -424,30 +480,12 @@ def startAdminPage():
 
 def startAddPage():
     page5.show()
-    page2.hide()
-    page1.hide()
-    page3.hide()
-    page4.hide()
-    page6.hide()
-    page7.hide()
     
 def startRemovePage():
     page6.show()
-    page5.hide()
-    page2.hide()
-    page1.hide()
-    page3.hide()
-    page4.hide()
-    page7.hide()
 
 def startPage7():
     page7.show()
-    page5.hide()
-    page2.hide()
-    page1.hide()
-    page3.hide()
-    page4.hide()
-    page6.hide()
     
 page1.initPage1()
 page2.initPage2()
