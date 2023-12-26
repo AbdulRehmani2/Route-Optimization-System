@@ -468,6 +468,7 @@ def startPage3():
     page5.hide()
     page6.hide()
     page7.hide()
+    page3.initPage3()
 
 def startAdminPage():
     page4.show()
