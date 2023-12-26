@@ -384,7 +384,7 @@ def visualizeShortestPath(graph, source, destination, mode):
             G2.add_edge(node.value, neighbor.value, label=f"{distanceOnEarth(node.latitude, node.longitude, neighbor.latitude, neighbor.longitude)}")
 
     pos = nx.get_node_attributes(G, 'pos')
-    plt.text(20, 60, 'This is a text annotation', fontsize=12, color='red', ha='center', va='bottom')
+    plt.text(20, 60, '', fontsize=12, color='red', ha='center', va='bottom')
     nx.draw(G, pos, with_labels=True, font_weight='bold', node_size=1, node_color='skyblue', font_color='black', font_size=10, edge_color='blue')
     edgeLabels = nx.get_edge_attributes(G, 'label')
     nx.draw_networkx_edge_labels(G, pos, edge_labels=edgeLabels, font_size=6)
